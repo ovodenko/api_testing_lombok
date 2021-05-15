@@ -1,9 +1,9 @@
-package models.api.post;
+package models.api.twit;
 
 import lombok.Getter;
 
 @Getter
-public class PostResponse {
+public class TwitResponse {
   private int id;
   private String title;
   private String body;

@@ -1,4 +1,4 @@
-package models.api.post;
+package models.api.twit;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class PostRequest {
+public class TwitRequest {
   private int id;
   private String title;
   private String body;

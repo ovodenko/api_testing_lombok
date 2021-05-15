@@ -11,13 +11,13 @@ import io.restassured.response.Response;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import models.api.post.PostResponse;
-import services.GetPostsService;
+import models.api.twit.TwitResponse;
+import services.GetTwitsService;
 
-public class GetPostServiceImpl implements GetPostsService {
+public class GetPostServiceImpl implements GetTwitsService {
 
   @Override
-  public List<PostResponse> getResponsePosts() throws IOException {
+  public List<TwitResponse> getResponsePosts() throws IOException {
 
     RestAssured.defaultParser = Parser.JSON;
     ObjectMapper objectMapper = new ObjectMapper();
@@ -28,9 +28,9 @@ public class GetPostServiceImpl implements GetPostsService {
 
     String json = response.asString();
     Gson gson = new Gson();
-    PostResponse[] empObject = gson.fromJson(json, PostResponse[].class);
+    TwitResponse[] empObject = gson.fromJson(json, TwitResponse[].class);
 
-    List<PostResponse> postResponseList = Arrays.asList(empObject);
+    List<TwitResponse> postResponseList = Arrays.asList(empObject);
 
     // List<String> jsonResponseRoot = response.jsonPath().getList("$");
 
